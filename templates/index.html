@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Redimontor</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+            google.load("visualization", "1", {packages:["corechart"]});
+
+
+    </script>
+    <script src="{{ static_url("redimontor.js") }}" type="text/javascript"></script>
+    </head>
+    <body>
+        <div class="navbar-inverse" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <span class="navbar-brand">Redimontor</span>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-2 alert-info text-center" style="margin:1.4%;" id="used_memory">
+                    <p>USED MEMORY</p>
+                    <p class="well-value"></p>
+                </div>
+                <div class="col-md-2 alert-info text-center" style="margin:1.4%;" id="total-keys">
+                    <p>TOTAL KEYS</p>
+                    <p class="well-value"></p>
+                </div>
+                <div class="col-md-2 alert-info text-center" style="margin:1.4%;" id="connected_clients">
+                    <p>CLIENTS</p>
+                    <p class="well-value"></p>
+                </div>
+                <div class="col-md-2 alert-info text-center" style="margin:1.4%;" id="total_commands_processed_human">
+                    <p>COMMANDS PROCESSED</p>
+                    <p class="well-value"></p>
+                </div>
+                <div class="col-md-2 alert-info text-center" style="margin:1.4%;" id="uptime">
+                   <p>UPTIME</p>
+                   <p class="well-value"></p>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row-fluid" id="memory-widget-placeholder">
+            <div class="col-md-12">
+                <h3>Memory Consumption</h3>
+                <div id="memory-widget-chart"></div>
+            </div>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col-md-4" id="top-commands-widget-placeholder">
+                <h3>Top Commands</h3>
+                <div id="top-commands-widget-chart"></div>
+            </div>
+            <div class="col-md-4" id="heaviest-keys-widget-placeholder">
+                <h3>Heaviest Commands (micro seconds)</h3>
+                <div id="heaviest-keys-widget-chart"></div>
+            </div>
+            <div class="col-md-4" id="slowest-keys-widget-placeholder">
+                <h3>Slowest Calls</h3>
+                <div id="slowest-keys-widget-chart"></div>
+            </div>
+        </div>
+        <hr>
+        <div class="row" id="top-keys-widget-placeholder">
+            <div class="col-md-12">
+                <h3>Top Keys</h3>
+                <div id="top-keys-widget-chart"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6" id="top-prefixes-widget-placeholder">
+                <h3>Top Prefixes</h3>
+                <div id="top-prefixes-widget-chart"></div>
+            </div>
+            <div class="col-md-6" id="times-widget-placeholder">
+                <h3>Command Time (micro seconds)</h3>
+                <div id="times-widget-chart"></div>
+            </div>
+        </div>
+    </body>
+</html>
